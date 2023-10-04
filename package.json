@@ -10,6 +10,7 @@
     "@types/node": "^16.18.57",
     "@types/react": "^18.2.24",
     "@types/react-dom": "^18.2.8",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.0",
@@ -44,6 +45,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react-router-dom": "^5.3.3"
-  }
+  },
+  "presets": [
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-private-property-in-object"
+  ]
 }
