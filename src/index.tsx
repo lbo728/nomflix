@@ -1,15 +1,16 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
+import ReactDOM from "react-dom";
 
 import App from "./App";
 import { theme } from "./theme";
 
-const container = document.getElementById("root");
-const root = createRoot(container!);
+// import { createRoot } from "react-dom/client";
+// const container = document.getElementById("root");
+// const root = createRoot(container!);
 
 const GlobalStyle = createGlobalStyle`
 
@@ -79,7 +80,7 @@ a {
 
 const client = new QueryClient();
 
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
       <QueryClientProvider client={client}>
@@ -89,5 +90,6 @@ root.render(
         </ThemeProvider>
       </QueryClientProvider>
     </RecoilRoot>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
